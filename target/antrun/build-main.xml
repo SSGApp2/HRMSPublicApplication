@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <echo message="!!== deploy tomcat ss-test   ==!!"/>
+  <replaceregexp replace="\&lt;param-name\&gt;spring.profiles.active\&lt;/param-name\&gt;\&lt;param-value\&gt;deploy-oracle\&lt;/param-value\&gt;" byline="true" file="src/main/webapp/WEB-INF/web.xml" match="\&lt;param-name\&gt;spring.profiles.active\&lt;/param-name\&gt;\&lt;param-value\&gt;[a-zA-Z0-9.-]+\&lt;/param-value\&gt;"/>
+  <replaceregexp replace="database.driverClassName=" byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.driverClassName=[a-zA-Z0-9.:/]+"/>
+  <replaceregexp replace="database.url=" byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.url=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="database.username=" byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.username=[a-zA-Z0-9.:/]*"/>
+  <replaceregexp replace="database.password=" byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.password=[a-zA-Z0-9.:/]*"/>
+  <replaceregexp replace="PM-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="PM-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="PY-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="PY-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="OR-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="OR-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="AD-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="AD-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="BF-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="BF-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="CA-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="CA-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="EC-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="EC-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="ID-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="ID-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="IS-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="IS-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="PE-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="PE-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="RC-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="RC-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="RD-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="RD-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="RP-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="RP-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="SA-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="SA-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="SC-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="SC-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="TD-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="TD-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="TA-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="TA-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="SecurityService=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="SecurityService=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="TaxExemptionServer=192.168.123.7:8488/TaxExemptionService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="TaxExemptionServer=[0-9a-zA-Z.:;@//=]+"/>
+  <replaceregexp replace="IDP-HRMSServer=192.168.123.7:8488/HRMSService/rest" byline="true" file="src/main/resources/hrms.server.properties" match="IDP-HRMSServer=[0-9a-zA-Z.:;@//=]+"/>
+</target>
+</project>

@@ -1,0 +1,9 @@
+<aspectj>
+<aspects>
+<aspect name="com.springsource.roo.noncas.domain.ParameterLangIntegrationTest_Roo_Configurable"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterLangIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterLangDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterLangDataOnDemand_Roo_Configurable"/>
+</aspects>
+</aspectj>
+
