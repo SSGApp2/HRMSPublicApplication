@@ -1,0 +1,36 @@
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2019-03-19 17:40:05
+project --topLevelPackage com.springsource.roo.noncas
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2019-03-19 17:43:22
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+perform test
+entity jpa --class ~base.BaseEntity --abstract --mappedSuperclass --activeRecord
+field string createdBy
+field string updatedBy
+field string status
+field date --fieldName createdDate --type java.util.Date --dateFormat SHORT --dateTimeFormatPattern "dd/MM/yyyy"
+field date --fieldName updatedDate --type java.util.Date --dateFormat SHORT --dateTimeFormatPattern "dd/MM/yyyy"
+entity jpa --class ~.domain.td.CourseBatch --extends ~.base.BaseEntity --inheritanceType TABLE_PER_CLASS --testAutomatically
+    field string --fieldName ouCode;
+    field number --type  java.lang.Long  --fieldName batchId;
+    field string --fieldName courseCode;
+    field string --fieldName batchName;
+    field number --type java.lang.Integer  --fieldName batchMaxRegister;
+    field date --type java.util.Date  --fieldName batchOpenRegisterDate;
+    field date --type java.util.Date  --fieldName batchCloseRegisterDate;
+    field date --type java.util.Date  --fieldName batchStartCourseDate;
+    field date --type java.util.Date  --fieldName batchFinishCourseDate;
+    field boolean  --fieldName isExternalCourse;
+    field boolean  --fieldName batchActive;
+    field string --fieldName batchCourseObjective;
+json all --deepSerialize
+web mvc setup
+web mvc all --package ~.web.td
+web mvc json all
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2019-03-20 10:20:44
+entity jpa --class ~.domain.ParameterLang --extends ~.base.BaseEntity --inheritanceType TABLE_PER_CLASS --testAutomatically
+field string --fieldName lDesc
+field string --fieldName code --notNull 
+field string --fieldName localDesc
+field string --fieldName engDesc
+field string --fieldName paramType
+json all --deepSerialize

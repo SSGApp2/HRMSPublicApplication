@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <!--<c:set value="${pageContext.request.contextPath}" var="contextPath"/>-->
+    <!--<script>-->
+        <!--var contextPath = '${contextPath}';-->
+    <!--</script>-->
+
+    <c:set var="BUTTON_CONFIRM" scope="request"><spring:message code="BT0003"/></c:set>
+    <c:set var="BUTTON_OK" scope="request"><spring:message code="BT0016"/></c:set>
+
+    <c:set var="LABEL_HRMS" scope="request"><spring:message code="LB0691"/></c:set>
+    <c:set var="LABEL_CONFIRM_JOIN" scope="request"><spring:message code="LB33971" text="LB33971"/></c:set>
+    <c:set var="LABEL_COURSE" scope="request"><spring:message code="LB0482" text="LB0482"/></c:set>
+    <c:set var="LABEL_BATCH" scope="request"><spring:message code="LB1170" text="LB1170"/></c:set>
+    <c:set var="LABEL_EMPLOYEE_CODE" scope="request"><spring:message code="LB0040" text="LB0040"/></c:set>
+    <c:set var="LABEL_TIMEOUT" scope="request"><spring:message code="LB33972" text="LB33972"/></c:set>
+    <c:set var="LABEL_NOT_YET_TIME" scope="request"><spring:message code="LB33991" text="LB33991"/></c:set>
+
+    <c:set var="MSG_INPUT_ELEMENT" scope="request"><spring:message code="MS0127"/></c:set>
+    <c:set var="MSG_CONFIRM_SUCCESS" scope="request"><spring:message code="MS0421" text="MS0421"/></c:set>
+    <c:set var="MSG_CONFIRM_DUPLICATE" scope="request"><spring:message code="MS0422" text="MS0422"/></c:set>
+    <c:set var="MSG_EMP_CODE_INCORRECT" scope="request"><spring:message code="MS0423" text="MS0423"/></c:set>
+    <c:set var="MSG_FAIL" scope="request"><spring:message code="MS0065" text="MS0065"/></c:set>
+
+    <script type="text/javascript">
+        var Label = {};
+        var Button = {};
+        var Message = {};
+
+        Button.BUTTON_OK = '${BUTTON_OK}';
+
+        Message.MSG_CONFIRM_SUCCESS = '${MSG_CONFIRM_SUCCESS}';
+        Message.MSG_CONFIRM_DUPLICATE = '${MSG_CONFIRM_DUPLICATE}';
+        Message.MSG_EMP_CODE_INCORRECT = '${MSG_EMP_CODE_INCORRECT}';
+        Message.MSG_FAIL = '${MSG_FAIL}';
+
+        var checkTime = '${checkTime}';
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <!--<div class="form-horizontal">-->
+                <!--<div class="form-group">-->
+                    <!--<ol class="breadcrumb">-->
+                        <!--<li>${LABEL_HRMS}</li>-->
+                        <!--<li>${LABEL_TRAINING_DEVELOPMENT}</li>-->
+                        <!--<li>${LABEL_REPORT}</li>-->
+                        <!--<li class="active">${LABEL_REPORT_NAME}</li>-->
+                    <!--</ol>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-horizontal">
+                <input id="resultID" class="hidden" value="${courseBatchResult.getResultId()}"/>
+                <div class="form-group">
+                    <div class="panel panel-default">
+
+                        <div class="panel-heading">
+                            <b>${LABEL_CONFIRM_JOIN}</b>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div id="intime" class="form-horizontal" style="display: none">
+
+                                    <div class="form-group">
+                                        <label class="col-lg-offset-2 col-sm-2 control-label">${LABEL_COURSE}</label>
+                                        <div class="col-sm-4" style="padding-right: 0px;">
+                                            <input class="form-control" disabled="disabled" value="${courseBatchResult.getResultCode()}"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-offset-2 col-sm-2 control-label">${LABEL_BATCH}</label>
+                                        <div class="col-sm-4" style="padding-right: 0px;">
+                                            <input class="form-control" disabled="disabled" value="${courseBatchResult.getResultGeneratorName()}"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-offset-2 col-sm-2 control-label required">${LABEL_EMPLOYEE_CODE}</label>
+                                        <div class="col-sm-2" style="padding-right: 0px;">
+                                            <input id="emp_code" class="form-control" data-toggle="popover" data-content="${MSG_INPUT_ELEMENT}" data-placement="bottom"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-6 text-center">
+                                            <input type="button" id="btn_confirm" class="btn btn-success"
+                                                   value="${BUTTON_CONFIRM}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="is_timeout" class="form-horizontal" style="display: none">
+                                    <div class="form-group" style="text-align: center"><p style="color: red;text-align: center;margin-top: 5%;margin-bottom: 5%;font-size: 18px;">${LABEL_TIMEOUT}</p></div>
+                                </div>
+                                <div id="is_notYetTime" class="form-horizontal" style="display: none">
+                                    <div class="form-group" style="text-align: center"><p style="color: red;text-align: center;margin-top: 5%;margin-bottom: 5%;font-size: 18px;">${LABEL_NOT_YET_TIME}</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <spring:url value="/resources/scripts/courseBatchTraineeConfirm.js" var="courseBatchTraineeConfirm"/>
+    <script src="${courseBatchTraineeConfirm}" type="text/javascript"><!--Not Empty --></script>
+</div>

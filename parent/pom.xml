@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.spt.hrms</groupId>
+    <artifactId>HRMS_PARENT</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>HRMS_PARENT</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <profiles>
+        <!--เครื่องเทส 48-->
+        <profile>
+            <id>deploy-ss-dev-oracle-database-server</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.7</version>
+                        <executions>
+                            <execution>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <echo message="!!== deploy tomcat ss-test   ==!!"/>
+                                        <replaceregexp byline="true" file="src/main/webapp/WEB-INF/web.xml" match="\&lt;param-name\&gt;spring.profiles.active\&lt;/param-name\&gt;\&lt;param-value\&gt;[a-zA-Z0-9.-]+\&lt;/param-value\&gt;" replace="\&lt;param-name\&gt;spring.profiles.active\&lt;/param-name\&gt;\&lt;param-value\&gt;deploy-oracle\&lt;/param-value\&gt;"/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.driverClassName=[a-zA-Z0-9.:/]+" replace="database.driverClassName="/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.url=[0-9a-zA-Z.:;@//=]+" replace="database.url="/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.username=[a-zA-Z0-9.:/]*" replace="database.username="/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.password=[a-zA-Z0-9.:/]*" replace="database.password="/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="PM-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="PM-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="PY-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="PY-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="OR-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="OR-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="AD-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="AD-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="BF-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="BF-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="CA-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="CA-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="EC-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="EC-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="ID-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="ID-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="IS-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="IS-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="PE-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="PE-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="RC-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="RC-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="RD-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="RD-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="RP-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="RP-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="SA-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="SA-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="SC-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="SC-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="TD-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="TD-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="TA-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="TA-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="SecurityService=[0-9a-zA-Z.:;@//=]+" replace="SecurityService=192.168.123.7:8488/HRMSService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="TaxExemptionServer=[0-9a-zA-Z.:;@//=]+" replace="TaxExemptionServer=192.168.123.7:8488/TaxExemptionService/rest"/>
+                                        <replaceregexp byline="true" file="src/main/resources/hrms.server.properties" match="IDP-HRMSServer=[0-9a-zA-Z.:;@//=]+" replace="IDP-HRMSServer=192.168.123.7:8488/HRMSService/rest"/>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <configuration>
+                            <server>Apache_Tomcat_7_SS_TEST</server>
+                            <url>http://192.168.123.7:8488/manager/text</url>
+                            <path>${module.name}</path>
+                            <username>tomcat</username>
+                            <password>p@ssw0rd</password>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+<properties>
+        <roo.version>1.3.2.RELEASE</roo.version>
+    </properties>
+</project>

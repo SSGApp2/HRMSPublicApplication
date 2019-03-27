@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+<Configure class="org.mortbay.jetty.plugin.JettyServer">
+
+<New id="ds" class="org.eclipse.jetty.plus.jndi.Resource">
+    <Arg>jdbc/HRMS</Arg>
+    <Arg>
+    <New class="org.apache.commons.dbcp.BasicDataSource">
+                <Set name="driverClassName">org.apache.derby.jdbc.ClientDriver</Set>
+                 <Set name="url">jdbc:derby://localhost:1527/HRMS;create=true</Set>
+                 <Set name="username">hrms</Set>
+                 <Set name="password">hrms</Set>
+    </New>
+    </Arg>
+
+    <!--<Arg>jdbc/HRMS</Arg>-->
+    <!--<Arg>-->
+    <!--<New class="org.apache.commons.dbcp.BasicDataSource">-->
+    <!--<Set name="driverClassName">org.postgresql.Driver</Set>-->
+    <!--<Set name="url">jdbc\:postgresql\://172.16.255.168\:5432/hrms</Set>-->
+    <!--<Set name="username">hrms</Set>-->
+    <!--<Set name="password">hrms</Set>-->
+    <!--</New>-->
+    <!--</Arg>-->
+</New>
+
+
+</Configure>
+ 

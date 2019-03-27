@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_springsource_roo_noncas_domain_td_CourseBatch" object="${coursebatch}" path="/coursebatches" z="nZL2j2HpVZBYPGv49agXsffCB1o=">
+        <field:display field="createdBy" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_createdBy" object="${coursebatch}" z="Lzx6bA7iZJa7FdAjk2jBbxg7sAk="/>
+        <field:display field="updatedBy" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_updatedBy" object="${coursebatch}" z="xZ1SRGTgNW6K/1BphJKXH44u778="/>
+        <field:display field="status" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_status" object="${coursebatch}" z="T3gbTFYdlpXwykYz09sWo3HD0e8="/>
+        <field:display date="true" dateTimePattern="${courseBatch_createddate_date_format}" field="createdDate" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_createdDate" object="${coursebatch}" z="D3t4J2W0QAud3uyaUfC19iEj3YA="/>
+        <field:display date="true" dateTimePattern="${courseBatch_updateddate_date_format}" field="updatedDate" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_updatedDate" object="${coursebatch}" z="ja2kXKkpHorEvY5CUAfBjM/WHj4="/>
+        <field:display field="ouCode" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_ouCode" object="${coursebatch}" z="svQp76VDgkUFdZ6vueHmmxx7yQg="/>
+        <field:display field="batchId" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_batchId" object="${coursebatch}" z="mzaNKsZ33RY1DY2i7sQhZPHK3wE="/>
+        <field:display field="courseCode" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_courseCode" object="${coursebatch}" z="3ASoi0RzjSXC6osaYJNt8t/LNbc="/>
+        <field:display field="batchName" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_batchName" object="${coursebatch}" z="/IbVLJPraFTFvWiqkkQprv6TTH8="/>
+        <field:display field="batchMaxRegister" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_batchMaxRegister" object="${coursebatch}" z="lTPrx3WN4TITxzTVXCkojPeNzys="/>
+        <field:display date="true" dateTimePattern="${courseBatch_batchopenregisterdate_date_format}" field="batchOpenRegisterDate" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_batchOpenRegisterDate" object="${coursebatch}" z="qQ14HPP8PrXZ0RmQmCvUH0BVo+E="/>
+        <field:display date="true" dateTimePattern="${courseBatch_batchcloseregisterdate_date_format}" field="batchCloseRegisterDate" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_batchCloseRegisterDate" object="${coursebatch}" z="G6L5VtuIjwFLcH8kJFHz1rvgssc="/>
+        <field:display date="true" dateTimePattern="${courseBatch_batchstartcoursedate_date_format}" field="batchStartCourseDate" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_batchStartCourseDate" object="${coursebatch}" z="Pcghs6HPcOKcLWjmU52sURr7FTA="/>
+        <field:display date="true" dateTimePattern="${courseBatch_batchfinishcoursedate_date_format}" field="batchFinishCourseDate" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_batchFinishCourseDate" object="${coursebatch}" z="UOXwRZ6/+NYEVENMUpbqYGJsPPY="/>
+        <field:display field="isExternalCourse" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_isExternalCourse" object="${coursebatch}" z="uSyPV6v9tXacgD1V4a0/h39YLwA="/>
+        <field:display field="batchActive" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_batchActive" object="${coursebatch}" z="fZtlxdVUv0MKy1E0bxPb1dy9IeU="/>
+        <field:display field="batchCourseObjective" id="s_com_springsource_roo_noncas_domain_td_CourseBatch_batchCourseObjective" object="${coursebatch}" z="f0RmFNHWJaenZ1l3H9mmkwyheyg="/>
+    </page:show>
+</div>
