@@ -72,4 +72,14 @@ public class CourseBatchController {
         uiModel.addAttribute("checkTime",checkTime);
         return "coursebatches/courseBatchTraineeJoin";
     }
+
+    @RequestMapping(value = "/courseBatchResultEvaluation", produces = "text/html")
+    public String courseBatchResultEvaluation(Model uiModel
+            , @RequestParam(value = "courseCode", required = false) String courseCode
+            , @RequestParam(value = "courseBatchId", required = false) Long courseBatchId
+    ) {
+        uiModel.addAttribute("courseCode", courseCode);
+        uiModel.addAttribute("courseBatchId", courseBatchId);
+        return "coursebatches/courseBatchResultEvaluation";
+    }
 }

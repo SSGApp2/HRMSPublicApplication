@@ -1,19 +1,32 @@
 <aspectj>
 <aspects>
-<aspect name="com.springsource.roo.noncas.base.BaseEntity_Roo_JavaBean"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameter_Roo_ToString"/>
 <aspect name="com.springsource.roo.noncas.domain.ParameterLang_Roo_ToString"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetail_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetail_Roo_ToString"/>
 <aspect name="com.springsource.roo.noncas.domain.ParameterLang_Roo_Json"/>
 <aspect name="com.springsource.roo.noncas.base.BaseEntity_Roo_ToString"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameter_Roo_Configurable"/>
 <aspect name="com.springsource.roo.noncas.domain.ParameterLang_Roo_Jpa_ActiveRecord"/>
-<aspect name="com.springsource.roo.noncas.base.BaseEntity_Roo_Jpa_ActiveRecord"/>
 <aspect name="com.springsource.roo.noncas.base.BaseEntity_Roo_Configurable"/>
-<aspect name="com.springsource.roo.noncas.base.BaseEntity_Roo_Json"/>
-<aspect name="com.springsource.roo.noncas.web.td.CourseBatchController_Custom_Controller"/>
 <aspect name="com.springsource.roo.noncas.domain.ParameterLang_Roo_Jpa_Entity"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetail_Roo_Jpa_Entity"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameter_Roo_Json"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterLang_Roo_JavaBean"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetail_Custom_Jpa_ActiveRecord"/>
+<aspect name="com.springsource.roo.noncas.base.BaseEntity_Roo_JavaBean"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetail_Roo_Json"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameter_Roo_Jpa_Entity"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameter_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetail_Roo_Configurable"/>
+<aspect name="com.springsource.roo.noncas.base.BaseEntity_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.springsource.roo.noncas.base.BaseEntity_Roo_Json"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameter_Roo_JavaBean"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetail_Roo_JavaBean"/>
+<aspect name="com.springsource.roo.noncas.web.td.CourseBatchController_Custom_Controller"/>
 <aspect name="com.springsource.roo.noncas.domain.ParameterLang_Roo_Configurable"/>
 <aspect name="com.springsource.roo.noncas.base.BaseEntity_Roo_Jpa_Entity"/>
 <aspect name="com.springsource.roo.noncas.web.td.CourseBatchController_Custom_Controller_Json"/>
-<aspect name="com.springsource.roo.noncas.domain.ParameterLang_Roo_JavaBean"/>
 </aspects>
 </aspectj>
 

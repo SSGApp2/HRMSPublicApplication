@@ -7,11 +7,8 @@ import com.spt.hrms.model.Employee;
 import flexjson.JSONSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.http.*;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
 
@@ -82,5 +79,35 @@ privileged aspect CourseBatchController_Custom_Controller_Json {
             return new ResponseEntity<String>("{\"ERROR\":"+e.getMessage()+"\"}", headers, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
+    }
+
+    @RequestMapping(value = "/findDataForEvaluationPage", method = RequestMethod.GET, headers = "Accept=application/json")
+    public ResponseEntity<String> CourseBatchController.findDataForEvaluationPage(
+            @RequestParam(value = "courseCode", required = false) String courseCode
+            ,@RequestParam(value = "batchId", required = false) String batchId) {
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json;charset=UTF-8");
+        try {
+            Map result = tdRestService.findDataForEvaluationPage(courseCode,batchId);
+            return new ResponseEntity<String>((new JSONSerializer().exclude("*.class").deepSerialize(result)), headers, HttpStatus.OK);
+        }catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return new ResponseEntity<String>("{\"ERROR\":" + e.getMessage() + "\"}", headers, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @RequestMapping(value = "/createFromJsonArray", method = RequestMethod.POST, headers = "Accept=application/json")
+    public ResponseEntity<String> CourseBatchController.createFromJsonArray(@RequestBody String json) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json;charset=UTF-8");
+        try {
+//            String result = tdRestService.createFromJsonArray(json);
+//            return new ResponseEntity<String>((new JSONSerializer().exclude("*.class").deepSerialize(result)), headers, HttpStatus.OK);
+            return tdRestService.createFromJsonArray(json);
+        }catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return new ResponseEntity<String>("{\"ERROR\":" + e.getMessage() + "\"}", headers, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

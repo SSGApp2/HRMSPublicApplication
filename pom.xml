@@ -11,7 +11,7 @@
     <artifactId>HRMS_PB</artifactId>
     <packaging>war</packaging>
     <version>0.1.0.BUILD-SNAPSHOT</version>
-    <name>noncas</name>
+    <name>HRMS_PB</name>
     <properties>
         <aspectj.version>1.8.1</aspectj.version>
         <java.version>1.6</java.version>

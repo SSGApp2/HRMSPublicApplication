@@ -125,4 +125,14 @@ public abstract class AbstractHRMSService {
         return headers;
     }
 
+    public ResponseEntity<String> sentPostJsonString(String url, String json) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity<String> entity = new HttpEntity<String>(json, headers);
+        LOGGER.debug("entity {} ", entity);
+        ResponseEntity<String> reponseEntity = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+        return reponseEntity;
+    }
+
 }

@@ -104,6 +104,6 @@
             </div>
         </div>
     </div>
-    <spring:url value="/resources/scripts/courseBatchTraineeConfirm.js" var="courseBatchTraineeConfirm"/>
+    <spring:url value="/resources/scripts/td/courseBatchTraineeConfirm.js" var="courseBatchTraineeConfirm"/>
     <script src="${courseBatchTraineeConfirm}" type="text/javascript"><!--Not Empty --></script>
 </div>

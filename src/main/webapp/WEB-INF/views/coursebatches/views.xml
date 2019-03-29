@@ -19,4 +19,7 @@
     <definition extends="default" name="coursebatches/courseBatchTraineeJoin">
         <put-attribute name="body" value="/WEB-INF/views/coursebatches/courseBatchTraineeJoin.jspx"/>
     </definition>
+    <definition extends="default" name="coursebatches/courseBatchResultEvaluation">
+        <put-attribute name="body" value="/WEB-INF/views/coursebatches/courseBatchResultEvaluation.jspx"/>
+    </definition>
 </tiles-definitions>

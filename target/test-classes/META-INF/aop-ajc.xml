@@ -1,8 +1,16 @@
 <aspectj>
 <aspects>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetailIntegrationTest_Roo_Configurable"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameterIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameterDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetailDataOnDemand_Roo_Configurable"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameterIntegrationTest_Roo_Configurable"/>
 <aspect name="com.springsource.roo.noncas.domain.ParameterLangIntegrationTest_Roo_Configurable"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetailIntegrationTest_Roo_IntegrationTest"/>
 <aspect name="com.springsource.roo.noncas.domain.ParameterLangIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.springsource.roo.noncas.domain.AppParameterDataOnDemand_Roo_Configurable"/>
 <aspect name="com.springsource.roo.noncas.domain.ParameterLangDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.springsource.roo.noncas.domain.ParameterDetailDataOnDemand_Roo_DataOnDemand"/>
 <aspect name="com.springsource.roo.noncas.domain.ParameterLangDataOnDemand_Roo_Configurable"/>
 </aspects>
 </aspectj>

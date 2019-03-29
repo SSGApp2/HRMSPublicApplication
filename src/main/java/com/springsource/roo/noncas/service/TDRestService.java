@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -99,6 +100,34 @@ public class TDRestService extends AbstractHRMSService {
             String url="http://" + HRMSServer + "/coursebatches/findTDRP20/"+ batchId;
             setWebServicesString(url);
             result = gson.fromJson(getResultString(),Map.class);
+        } catch (Exception e) {
+            LOGGER.error("Error : {}", e.getMessage());
+            throw new RuntimeException(e);
+        }
+
+        return result;
+    }
+
+    public Map findDataForEvaluationPage(String courseCode,String batchId){
+        Map result = new HashMap();
+        try {
+            String url="http://" + HRMSServer + "/coursebatches/findDataForEvaluationPage/"+ courseCode+"/"+batchId;
+            setWebServicesString(url);
+            result = gson.fromJson(getResultString(),Map.class);
+        } catch (Exception e) {
+            LOGGER.error("Error : {}", e.getMessage());
+            throw new RuntimeException(e);
+        }
+
+        return result;
+    }
+
+    public ResponseEntity<String> createFromJsonArray(String json){
+        ResponseEntity<String> result;
+        try {
+            String url="http://" + HRMSServer + "/coursebatches/createFromJsonArray";
+//            setWebServicesString(url);
+            result = sentPostJsonString(url,json);
         } catch (Exception e) {
             LOGGER.error("Error : {}", e.getMessage());
             throw new RuntimeException(e);
