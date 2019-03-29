@@ -219,6 +219,6 @@
         </div>
     </div>
 
-    <spring:url value="/resources/scripts/courseBatchTraineeJoin.js" var="courseBatchTraineeJoin"/>
+    <spring:url value="/resources/scripts/td/courseBatchTraineeJoin.js" var="courseBatchTraineeJoin"/>
     <script src="${courseBatchTraineeJoin}" type="text/javascript"><!--Not Empty --></script>
 </div>

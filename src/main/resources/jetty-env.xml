@@ -6,10 +6,10 @@
     <Arg>jdbc/HRMS</Arg>
     <Arg>
     <New class="org.apache.commons.dbcp.BasicDataSource">
-                <Set name="driverClassName">org.apache.derby.jdbc.ClientDriver</Set>
-                 <Set name="url">jdbc:derby://localhost:1527/HRMS;create=true</Set>
+                <Set name="driverClassName">oracle.jdbc.OracleDriver</Set>
+                 <Set name="url">jdbc:oracle:thin:@192.168.123.9:1522:xe</Set>
                  <Set name="username">hrms</Set>
-                 <Set name="password">hrms</Set>
+                 <Set name="password">HRMS</Set>
     </New>
     </Arg>
 
