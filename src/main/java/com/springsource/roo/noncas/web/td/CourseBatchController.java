@@ -36,8 +36,8 @@ public class CourseBatchController {
             , @PathVariable("code")String code
             , @PathVariable("generator")String generator) {
         CourseBatch courseBatch = tdRestService.findCourseBatchId(Long.parseLong(generator)).get(0);
-        courseBatch.setBatchOpenRegisterDate(HrmsUtil.getDateWithRemoveTime(courseBatch.getBatchOpenRegisterDate()));
-        courseBatch.setBatchCloseRegisterDate(HrmsUtil.getDateWithMaxTime(courseBatch.getBatchCloseRegisterDate()));
+        courseBatch.setBatchStartCourseDate(HrmsUtil.getDateWithRemoveTime(courseBatch.getBatchStartCourseDate()));
+        courseBatch.setBatchFinishCourseDate(HrmsUtil.getDateWithMaxTime(courseBatch.getBatchFinishCourseDate()));
         Date today = new Date();
         String checkTime = "InTime";
         if(today.after(courseBatch.getBatchFinishCourseDate())){
