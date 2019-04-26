@@ -144,6 +144,72 @@
             </build>
         </profile>
 
+
+<!-- POSTGRES  -->
+        <profile>
+            <id>deploy-postgres</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.7</version>
+                        <executions>
+                            <execution>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <echo message="!!== deploy tomcat ss-test   ==!!"/>
+                                       <replaceregexp byline="true" file="src/main/webapp/WEB-INF/web.xml" match="\&lt;param-name\&gt;spring.profiles.active\&lt;/param-name\&gt;\&lt;param-value\&gt;[a-zA-Z0-9.-]+\&lt;/param-value\&gt;" replace="\&lt;param-name\&gt;spring.profiles.active\&lt;/param-name\&gt;\&lt;param-value\&gt;deploy-postgres\&lt;/param-value\&gt;"/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.driverClassName=[a-zA-Z0-9.:/]+" replace="database.driverClassName="/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.url=[0-9a-zA-Z.:;@//=]+" replace="database.url="/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.username=[a-zA-Z0-9.:/]*" replace="database.username="/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.password=[a-zA-Z0-9.:/]*" replace="database.password="/>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+
+<!-- ORACLE  -->
+        <profile>
+            <id>deploy-oracle</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.7</version>
+                        <executions>
+                            <execution>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <echo message="!!== deploy tomcat ss-test   ==!!"/>
+                                       <replaceregexp byline="true" file="src/main/webapp/WEB-INF/web.xml" match="\&lt;param-name\&gt;spring.profiles.active\&lt;/param-name\&gt;\&lt;param-value\&gt;[a-zA-Z0-9.-]+\&lt;/param-value\&gt;" replace="\&lt;param-name\&gt;spring.profiles.active\&lt;/param-name\&gt;\&lt;param-value\&gt;deploy-oracle\&lt;/param-value\&gt;"/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.driverClassName=[a-zA-Z0-9.:/]+" replace="database.driverClassName="/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.url=[0-9a-zA-Z.:;@//=]+" replace="database.url="/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.username=[a-zA-Z0-9.:/]*" replace="database.username="/>
+                                        <replaceregexp byline="true" file="src/main/resources/META-INF/spring/database.properties" match="database.password=[a-zA-Z0-9.:/]*" replace="database.password="/>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
     </profiles>
 <properties>
         <roo.version>1.3.2.RELEASE</roo.version>
