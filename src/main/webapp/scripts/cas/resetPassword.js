@@ -20,7 +20,8 @@ $(document).ready(function () {
 });
 
 function openLoginForm() {
-    location.href = casPath+'/login';
+    // location.href = casPath+'/login';
+    location.href = '/HRMS';
 }
 
 function resetPassword() {
