@@ -3,6 +3,11 @@
 
 package com.springsource.roo.noncas.domain;
 
+import com.springsource.roo.noncas.base.BaseEntity;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.transform.Transformers;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -15,5 +20,19 @@ privileged aspect ParameterDetail_Custom_Jpa_ActiveRecord {
 
     public static List<ParameterDetail> ParameterDetail.findParameterDetailByValue1(String parameterValue1) {
         return entityManager().createQuery("SELECT o FROM ParameterDetail o where o.parameterValue1='"+parameterValue1+"'", ParameterDetail.class).getResultList();
+    }
+
+    public static ParameterDetail ParameterDetail.findParameterDetailByAppParameterCodeAndCode(String appParameterCode, String code){
+        ParameterDetail result = new ParameterDetail();
+        Criteria criteria = ((Session) BaseEntity.entityManager().getDelegate()).createCriteria(ParameterDetail.class);
+        criteria.createAlias("appParameter","appParameter");
+        criteria.add(Restrictions.eq("code",code));
+        criteria.add(Restrictions.eq("appParameter.code",appParameterCode));
+//        criteria.setResultTransformer(Transformers.aliasToBean(ParameterDetail.class));
+        List<ParameterDetail> parameterDetails = criteria.list();
+        if(parameterDetails.size() > 0){
+            result = parameterDetails.get(0);
+        }
+        return result;
     }
 }
