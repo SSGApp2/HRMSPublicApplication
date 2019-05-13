@@ -3,8 +3,6 @@ package com.springsource.roo.noncas.service;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.springsource.roo.noncas.util.HrmsUtil;
-import com.spt.hrms.model.CourseBatch;
-import com.spt.hrms.model.CourseBatchResult;
 import com.spt.hrms.model.Employee;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,32 +15,23 @@ import java.util.List;
 
 @Service
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class PMRestService extends AbstractHRMSService {
-    private static Logger LOGGER = LoggerFactory.getLogger(PMRestService.class);
+public class ADRestService extends AbstractHRMSService {
+    private static Logger LOGGER = LoggerFactory.getLogger(ADRestService.class);
 
-    public PMRestService() {
-        this.HRMSServer = connectProperties.getProperty("PM-HRMSServer");
+    public ADRestService() {
+        this.HRMSServer = connectProperties.getProperty("AD-HRMSServer");
     }
 
-    public Employee findEmployeeByEmployeeCode(String employeeCode) {
-        List<Employee> employees = new ArrayList<Employee>();
+    public String resetPasswordCas(String email) {
+        String result = "Fail";
 
         try {
-            setWebServicesString("http://"+ HRMSServer+ "/employee/findByEmpCodeEquals/" + employeeCode);
-            JsonArray jsonArray = parser.parse(getResultString()).getAsJsonArray();
-            for (JsonElement jsonElement : jsonArray) {
-                Employee employee = gson.fromJson(jsonElement, Employee.class);
-                employees.add(employee);
-            }
-            LOGGER.debug("find Emp By Emp Code Result [{}]", employees);
+            setWebServicesString("http://"+ HRMSServer+ "/appusers/resetPasswordCas/" + email);
+            result = getResultString();
         } catch (Exception e) {
             LOGGER.error("Error : {}", e.getMessage());
             throw new RuntimeException(e);
         }
-        if (HrmsUtil.isNotEmpty(employees)) {
-            return employees.get(0);
-        } else {
-            return null;
-        }
+        return result;
     }
 }

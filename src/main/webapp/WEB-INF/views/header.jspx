@@ -6,6 +6,16 @@
   <spring:url var="home" value="/" />
   <spring:message code="button_home" var="home_label" htmlEscape="false" />
 
+  <div class="dv-background" style="display: none;">
+    <div class="dv-loading">
+      <spring:url value="/resources/images/ess-loader.png" var="image_loader_url"/>
+
+      <div class="image-contain" style="background-image: url(${image_loader_url}); width:30px;height:30px;">
+        <jsp:text/>
+      </div>
+    </div>
+  </div>
+
   <script>
       var session = {
           context: '/' + (window.location.pathname.split('/')[1])

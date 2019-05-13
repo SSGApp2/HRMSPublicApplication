@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-    <definition extends="default" name="coursebatches/list">
-        <put-attribute name="body" value="/WEB-INF/views/coursebatches/list.jspx"/>
-    </definition>
-<definition extends="default" name="coursebatches/show">
-        <put-attribute name="body" value="/WEB-INF/views/coursebatches/show.jspx"/>
-    </definition>
-<definition extends="default" name="coursebatches/create">
-        <put-attribute name="body" value="/WEB-INF/views/coursebatches/create.jspx"/>
-    </definition>
-<definition extends="default" name="coursebatches/update">
-        <put-attribute name="body" value="/WEB-INF/views/coursebatches/update.jspx"/>
-    </definition>
-    <definition extends="default" name="coursebatches/courseBatchTraineeConfirm">
-        <put-attribute name="body" value="/WEB-INF/views/coursebatches/courseBatchTraineeConfirm.jspx"/>
-    </definition>
-    <definition extends="default" name="coursebatches/courseBatchTraineeJoin">
-        <put-attribute name="body" value="/WEB-INF/views/coursebatches/courseBatchTraineeJoin.jspx"/>
-    </definition>
-    <definition extends="default" name="coursebatches/courseBatchResultEvaluation">
-        <put-attribute name="body" value="/WEB-INF/views/coursebatches/courseBatchResultEvaluation.jspx"/>
+    <definition extends="empty" name="resetpassword/resetPassword">
+        <put-attribute name="body" value="/WEB-INF/views/resetpassword/resetPassword.jspx"/>
     </definition>
 </tiles-definitions>
