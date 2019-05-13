@@ -1,4 +1,6 @@
 var casPath = "https://172.16.0.145:8448/cas-server";
+var path = window.location.pathname.split('/');
+console.log(path);
 $(document).ajaxStop(function() {
     $('.dv-background').hide();
 });
@@ -20,7 +22,8 @@ $(document).ready(function () {
 });
 
 function openLoginForm() {
-    location.href = casPath+'/login';
+    // location.href = casPath+'/login';
+    location.href = '/HRMS';
 }
 
 function resetPassword() {
