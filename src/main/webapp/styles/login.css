@@ -1,0 +1,127 @@
+
+        *{
+            font-family: "MS Sans Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+            color : #FFF;
+        }
+        .login_box{
+            display: none;
+            border-radius: 10px; 
+            background: #5bc0de; /* Old browsers */
+            /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjZjMyZDI3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTklIiBzdG9wLWNvbG9yPSIjZmY2YjQ1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+            background: -moz-linear-gradient(45deg,   #5bc0de 5%,  #5bc0de 99%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left bottom, right top, color-stop(5%, #5bc0de), color-stop(99%, #5bc0de)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(45deg,   #5bc0de 5%, #5bc0de 99%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(45deg,   #5bc0de 5%, #5bc0de 99%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(45deg,   #5bc0de 5%, #5bc0de 99%); /* IE10+ */
+            background: linear-gradient(45deg,   #5bc0de 5%, #5bc0de 99%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #5bc0de', endColorstr=' #5bc0de',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+            -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.54);
+            -moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 0.54);
+            box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.54);
+            padding-left: 0;
+            padding-right: 0;
+            margin-top: 5%;
+        }
+
+        .image-circle{
+            border-radius: 50%;
+            width: 175px;
+            height: 175px;
+            border: 3px solid #FFF;
+            margin: 10px;
+        }
+        .follow{
+            background-color:#2980b9;
+            height: 50px;
+        }
+        .login_control{
+            background-color:#FFF;
+            padding:10px;
+        }
+        .form-control{
+            min-height: 40px;
+            text-align: left;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .form-control:focus{
+            border: 2px solid #FC563B;
+            box-shadow: none;
+        }
+        .btn-green{
+            background-color: #2ecc71;
+            margin: 5px;
+            padding: 5px;
+            width: 120px;
+            font-size:16px;
+            font-weight: bold;
+            box-shadow: 0 6px #27ae60;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        .btn-green:hover {
+            background-color: #2ecc71;
+            margin: 5px;
+            padding: 5px;
+            width: 120px;
+            font-size:16px;
+            font-weight: bold;
+            color:#FFF !important;
+            box-shadow: 0 4px #27ae60;
+            border-radius: 5px 5px 5px 5px;
+        }
+        .btn-orange{
+            background-color: #FC563B;
+            margin: 5px;
+            padding: 5px;
+            width: 120px;
+            font-size:16px;
+            font-weight: bold;
+            color:#FFF !important;
+            box-shadow: 0 6px #F22F26;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        .btn-orange:hover {
+            background-color:#FC563B;
+            margin: 5px;
+            padding: 5px;
+            width: 120px;
+            font-size:16px;
+            font-weight: bold;
+            color:#FFF !important;
+            box-shadow: 0 4px #F22F26;
+            border-radius: 5px 5px 5px 5px;
+        }
+        .line{
+            border-bottom : 2px solid #2980b9;
+        }
+        .outter{
+            padding: 0px;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+
+        }
+        label {
+            color: #6C7A89;
+            font-size:15px;
+            font-weight: bold;
+        }
+         #footerDesc{
+             margin-top: 3%;
+             display: none;
+        }
+        #footerDesc p{
+             color: black;
+             display: none;
+        }
+        .image-circle-footer{
+            border-radius: 50%;
+            width: 65px;
+            height: 60px;
+            border: 3px solid #FFF;
+        }
