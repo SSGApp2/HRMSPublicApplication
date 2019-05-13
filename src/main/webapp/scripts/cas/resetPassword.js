@@ -1,4 +1,22 @@
 var casPath = "https://172.16.0.145:8448/cas-server";
+
+$("#f_email").keypress(function(event){
+    var ew = event.which;
+    if(ew == 32)
+        return true;
+    if(45 <= ew && ew <= 46)
+        return true;
+    if(48 <= ew && ew <= 57)
+        return true;
+    if(64 <= ew && ew <= 90)
+        return true;
+    if(ew == 95)
+        return true;
+    if(97 <= ew && ew <= 122)
+        return true;
+    return false;
+});
+
 $(document).ajaxStop(function() {
     $('.dv-background').hide();
 });
