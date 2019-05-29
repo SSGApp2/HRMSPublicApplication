@@ -67,6 +67,7 @@
   <spring:url value="/resources/scripts/modernizr.js" var="modernizr_js_url" />
   <spring:url value="/resources/scripts/selectize.js" var="selectize_js_url" />
   <spring:url value="/resources/scripts/selectize.min.js" var="selectize_min_js_url" />
+  <spring:url value="/resources/scripts/cleave.min.js" var="cleave_js" />
 
   <script src="${jquery_js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
   <script src="${jqueryUI_js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
@@ -85,6 +86,7 @@
   <script src="${modernizr_js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
   <script src="${selectize_js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
   <script src="${selectize_min_js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+  <script src="${cleave_js}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
   <spring:url value="/resources/scripts/util/UtilForm.js" var="UtilForm"/>
   <spring:url value="/resources/scripts/util/beanUtils.js" var="beanUtils"/>

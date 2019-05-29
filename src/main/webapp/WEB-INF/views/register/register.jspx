@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <jsp:useBean class="java.util.Date" id="now" scope="request" />
+
+    <c:set var="LABEL_REGISTER" scope="request"><spring:message code="x" text="สมัครเข้าใช้งานระบบ"/></c:set>
+    <c:set var="LABEL_COMPANY_NAME_TH" scope="request"><spring:message code="LB0429"/></c:set>
+    <c:set var="LABEL_COMPANY_NAME_EN" scope="request"><spring:message code="LB1114"/></c:set>
+    <c:set var="LABEL_BRANCH_NAME_TH" scope="request"><spring:message code="x" text="ชื่อสาขา"/></c:set>
+    <c:set var="LABEL_BRANCH_NAME_EN" scope="request"><spring:message code="x" text="ชื่อสาขา (ภาษาอังกฤษ)"/></c:set>
+    <c:set var="LABEL_BUILDING" scope="request"><spring:message code="LB0557" /></c:set>
+    <c:set var="LABEL_ROOM" scope="request"><spring:message code="LB0582" /></c:set>
+    <c:set var="LABEL_ROOM" scope="request"><spring:message code="LB0582" /></c:set>
+    <c:set var="LABEL_FLOOR" scope="request"><spring:message code="LB0566" /></c:set>
+    <c:set var="LABEL_HOUSE_NO" scope="request"><spring:message code="LB0432" /></c:set>
+    <c:set var="LABEL_MOO" scope="request"><spring:message code="LB1117" /></c:set>
+    <c:set var="LABEL_VILLAGE" scope="request"><spring:message code="LB0481" /></c:set>
+    <c:set var="LABEL_SOI" scope="request"><spring:message code="LB0637" /></c:set>
+    <c:set var="LABEL_ROAD" scope="request"><spring:message code="LB0593" /></c:set>
+    <c:set var="LABEL_PROVINCE" scope="request"><spring:message code="LB0492" /></c:set>
+    <c:set var="LABEL_DISTRICT" scope="request"><spring:message code="LB0559" /></c:set>
+    <c:set var="LABEL_SUB_DISTRICT" scope="request"><spring:message code="LB0569" /></c:set>
+    <c:set var="LABEL_ZIP_CODE" scope="request"><spring:message code="LB0388" /></c:set>
+    <c:set var="LABEL_TEL_NO" scope="request"><spring:message code="LB0373" /></c:set>
+    <c:set var="LABEL_FAX" scope="request"><spring:message code="LB1442" /></c:set>
+    <c:set var="LABEL_USERNAME" scope="request"><spring:message code="LB1494" /></c:set>
+    <c:set var="LABEL_PASSWORD" scope="request"><spring:message code="LB1495" /></c:set>
+    <c:set var="LABEL_REGIST_SUCCESSFULLY" scope="request"><spring:message code="x" text="สมัครเข้าใช้งานระบบเรียบร้อย" /></c:set>
+    <c:set var="LABEL_LOGIN" scope="request"><spring:message code="x" text="คลิกที่นี่เพื่อเข้าสู่ระบบ" /></c:set>
+
+    <c:set var="BUTTON_SAVE" scope="request"><spring:message code="BT0004"/></c:set>
+    <c:set var="BUTTON_CANCEL" scope="request"><spring:message code="BT0002"/></c:set>
+
+    <c:set var="MSG_INPUT_ELEMENT" scope="request"> <spring:message code="MS0127" /> </c:set>
+    <c:set var="MSG_FAIL" scope="request"> <spring:message code="MS0065" /> </c:set>
+
+    <script type="text/javascript">
+        var LABEL = {};
+        var BUTTON = {};
+        var MESSAGE = {};
+
+        LABEL.LABEL_USERNAME = '${LABEL_USERNAME}';
+        LABEL.LABEL_PASSWORD = '${LABEL_PASSWORD}';
+
+        MESSAGE.MSG_FAIL = '${MSG_FAIL}';
+    </script>
+
+    <div class="container">
+        <div class="row" style="margin-top: 30px" id="div_register">
+            <b>${LABEL_REGISTER}</b>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required">${LABEL_COMPANY_NAME_TH}</label>
+                    <div class="col-sm-5">
+                        <input id="com_name_th" class="form-control validate" type="text" data-toggle="popover"
+                               data-content="${MSG_INPUT_ELEMENT}"
+                               data-placement="bottom"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required">${LABEL_COMPANY_NAME_EN}</label>
+                    <div class="col-sm-5">
+                        <input id="com_name_en" class="form-control validate" type="text" data-toggle="popover"
+                               data-content="${MSG_INPUT_ELEMENT}"
+                               data-placement="bottom"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required">${LABEL_BRANCH_NAME_TH}</label>
+                    <div class="col-sm-5">
+                        <input id="branch_name_th" class="form-control validate" type="text" data-toggle="popover"
+                               data-content="${MSG_INPUT_ELEMENT}"
+                               data-placement="bottom"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required">${LABEL_BRANCH_NAME_EN}</label>
+                    <div class="col-sm-5">
+                        <input id="branch_name_en" class="form-control validate" type="text" data-toggle="popover"
+                               data-content="${MSG_INPUT_ELEMENT}"
+                               data-placement="bottom"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">${LABEL_BUILDING}</label>
+                    <div class="col-sm-4">
+                        <input id="building" class="form-control" type="text"></input>
+                    </div>
+                    <label class="col-sm-2 control-label">${LABEL_ROOM}</label>
+                    <div class="col-sm-2">
+                        <input id="room" class="form-control" type="text"></input>
+                    </div>
+                    <label class="col-sm-1 control-label">${LABEL_FLOOR}</label>
+                    <div class="col-sm-1">
+                        <input id="floor" class="form-control" type="text"></input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required">${LABEL_HOUSE_NO}</label>
+                    <div class="col-sm-4">
+                        <input id="house_no" class="form-control  validate" type="text" data-toggle="popover"
+                               data-content="${MSG_INPUT_ELEMENT}"
+                               data-placement="bottom"/>
+                    </div>
+                    <label class="col-sm-2 control-label">${LABEL_MOO}</label>
+                    <div class="col-sm-4">
+                        <input id="moo" class="form-control" type="text"></input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">${LABEL_VILLAGE}</label>
+                    <div class="col-sm-4">
+                        <input id="village" class="form-control" type="text"></input>
+                    </div>
+                    <label class="col-sm-2 control-label">${LABEL_SOI}</label>
+                    <div class="col-sm-4">
+                        <input id="soi" class="form-control" type="text"></input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">${LABEL_ROAD}</label>
+                    <div class="col-sm-4">
+                        <input id="road" class="form-control" type="text"></input>
+                    </div>
+                    <label class="col-sm-2 control-label required">${LABEL_PROVINCE}</label>
+                    <div class="col-sm-4">
+                        <span id="spanSelectProvince" required="required" data-toggle="popover" data-content="${MSG_INPUT_ELEMENT}" data-placement="bottom">
+                            <select id="province" type="select" class="form-control validate">
+                                <option value=""></option>
+                                <c:forEach var="province" items="${provinces}">
+                                    <option value="${province.provinceName}">${province.provinceName}</option>
+                                </c:forEach>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required">${LABEL_DISTRICT}</label>
+                    <div class="col-sm-4">
+                        <span id="spanSelectDistrict" required="required" data-toggle="popover" data-content="${MSG_INPUT_ELEMENT}" data-placement="bottom">
+                            <select id="district"  type="select" class="form-control validate">
+                                <option value=""></option>
+                            </select>
+                        </span>
+                    </div>
+                    <label class="col-sm-2 control-label required">${LABEL_SUB_DISTRICT}</label>
+                    <div class="col-sm-4">
+                        <span id="spanSubDistrict" class="validate" required="required" data-toggle="popover" data-content="${MSG_INPUT_ELEMENT}" data-placement="bottom">
+                            <select id="sub_district" class="form-control validate" type="select">
+                                <option value=""></option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required">${LABEL_ZIP_CODE}</label>
+                    <div class="col-sm-4">
+                        <input id="zip_code" class="form-control validate" type="text" data-toggle="popover"
+                               data-content="${MSG_INPUT_ELEMENT}"
+                               data-placement="bottom"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">${LABEL_TEL_NO}</label>
+                    <div class="col-sm-4">
+                        <input id="tel_no" class="form-control" type="text"></input>
+                    </div>
+                    <label class="col-sm-2 control-label">${LABEL_FAX}</label>
+                    <div class="col-sm-4">
+                        <input id="fax" class="form-control" type="text"></input>
+                    </div>
+                </div>
+                <div class="form-group text-center" style="margin-top: 30px">
+                    <input type="button" id="btn_save" class="btn btn-primary" style="margin-right: 5px" value="${BUTTON_SAVE}"/>
+                    <input type="button" id="btn_cancel" class="btn btn-danger" value="${BUTTON_CANCEL}"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 150px;display: none" id="div_regis_success">
+            <div class="form-group text-center">
+                <b style="font-size: 28px">${LABEL_REGIST_SUCCESSFULLY}</b><br></br>
+                <br></br>
+                <b id="username">${LABEL_USERNAME}</b><br></br>
+                <b id="password">${LABEL_PASSWORD}</b><br></br>
+                <br></br>
+                <a href="#" id="link_login">${LABEL_LOGIN}</a>
+            </div>
+        </div>
+    </div>
+
+    <spring:url value="/resources/scripts/util/UtilComboBox.js" var="UtilComboBox"/>
+    <script src="${UtilComboBox}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+    <spring:url value="/resources/scripts/register/register.js" var="register"/>
+    <script src="${register}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+</div>
+
