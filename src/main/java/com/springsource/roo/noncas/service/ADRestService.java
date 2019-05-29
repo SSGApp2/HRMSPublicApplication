@@ -26,7 +26,7 @@ public class ADRestService extends AbstractHRMSService {
         String result = "Fail";
 
         try {
-            setWebServicesString("http://"+ HRMSServer+ "/appusers/resetPasswordCas/" + email);
+            setWebServicesString("http://"+ HRMSServer+ "/appusers/resetPasswordCas/" + email +"/");
             result = getResultString();
         } catch (Exception e) {
             LOGGER.error("Error : {}", e.getMessage());
