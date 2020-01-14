@@ -26,13 +26,13 @@ $(document).ajaxStart(function() {
 });
 
 $(document).ready(function () {
-    $('body').css('background-image',"url("+casPath+"/images/bg.jpg)");
-    $('#img_logo').attr('src', casPath+"/images/square-logo.png");
-
     AjaxUtils.get("/resetpassword/findParameterCas").complete(function (xhr) {
         var parameterCas = xhr.responseJSON;
         if(BeanUtils.isNotEmpty(parameterCas)){
             casPath = "https://"+parameterCas.parameterValue3+"/cas-server";
+
+            $('body').css('background-image',"url("+casPath+"/images/bg.jpg)");
+            $('#img_logo').attr('src', casPath+"/images/square-logo.png");
         }
     });
 });
